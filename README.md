@@ -15,7 +15,7 @@ npm test
 npm run check
 ```
 
-The 32 Node tests comprise 18 original app/regression tests, ten case-URL/navigation tests and four viewport-harness tests. They cover the three real-case invariants, separately labelled synthetic invalid-record mutations, font-independent-decoration regressions and the inspection harness. Syntax checking covers all three scripts. These automated checks are separate from browser acceptance. Bounded hosted desktop visual/keyboard checks passed, including a fresh post-deployment check of the corrected glyphs. The actual app was also inspected in 320, 390 and 768 CSS-pixel iframe viewports, with no horizontal overflow in the inspected states. This is not physical-device, OS reduced-motion or screen-reader acceptance.
+The 40 Node tests comprise 18 original app/regression tests, ten case-URL/navigation tests, eight bootstrap-resilience tests and four viewport-harness tests. They cover the three real-case invariants, separately labelled synthetic invalid-record mutations, font-independent-decoration regressions and the inspection harness. Syntax checking covers all three scripts. These automated checks are separate from browser acceptance. Bounded hosted desktop visual/keyboard checks passed, including a fresh post-deployment check of the corrected glyphs. The actual app was also inspected in 320, 390 and 768 CSS-pixel iframe viewports, with no horizontal overflow in the inspected states. This is not physical-device, OS reduced-motion or screen-reader acceptance.
 
 ## Workflow
 
@@ -73,4 +73,8 @@ Do not represent the prototype or saved draft as a submitted or fully accepted d
 
 ## CSS viewport inspection harness
 
-[Open the test-only viewport harness](tools/viewport-check.html) and select 320, 390 or 768 CSS pixels. Use case selectors and evidence disclosures inside the actual embedded app; inspect wrapping, overflow and keyboard focus. Open external sources through the normal app outside the frame to avoid confusing external frame policies with link failures. This checks iframe CSS viewports only, not physical devices, mobile browser emulation, OS preferences, reduced-motion behavior or assistive technology. The suite now contains 32 tests: 18 original app/regression tests, ten navigation tests and four harness tests.
+[Open the test-only viewport harness](tools/viewport-check.html) and select 320, 390 or 768 CSS pixels. Use case selectors and evidence disclosures inside the actual embedded app; inspect wrapping, overflow and keyboard focus. Open external sources through the normal app outside the frame to avoid confusing external frame policies with link failures. This checks iframe CSS viewports only, not physical devices, mobile browser emulation, OS preferences, reduced-motion behavior or assistive technology. The suite now contains 40 tests: 18 original app/regression tests, ten navigation tests, eight bootstrap tests and four harness tests.
+
+## If the examples do not start
+
+The HTML includes a static explanation and links to all three original City records. This remains available if a script fails to load, a dependency is missing, the records fail validation, or initial rendering fails. The interactive detail replaces it only after a complete render succeeds. The app does not assume network status, retry automatically or fetch new data. Eight standard-library bootstrap tests exercise actual startup code with missing globals, invalid records and a synthetic render failure; these are not native network-interruption or assistive-technology acceptance.
