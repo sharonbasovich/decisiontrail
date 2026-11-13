@@ -47,6 +47,8 @@ cases.js -> core validation -> app.js DOM rendering -> official source links
 
 This diagram describes the current code, not a planned automated ingestion pipeline.
 
+[Design and verification map](docs/design.md): implemented requirements, sequence and trust boundaries, with links to the existing checks and their limits.
+
 ## Fresh-work and AI disclosure
 
 The organizer's build window opened **November 13, 2026 at 00:00 UTC**. Public rules and the selected challenge were reverified during the 00:07:57–00:10:12 admission review. Concrete case feasibility completed at 00:12:19. Implementation was assigned and created after those checks, within the open window; the original README checkpoint was written at 00:22 UTC, and this documentation revision was prepared with the subsequent glyph fix. Filesystem display timezone is not used as evidence of a different build date. No prior project code was reused.
