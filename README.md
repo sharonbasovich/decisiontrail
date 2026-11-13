@@ -6,7 +6,7 @@ A small, static CIVIC Hack 2026 prototype for understanding what a municipal rec
 
 ## Run and test
 
-No installation or runtime dependencies are required. Open `index.html` in a browser. The classic scripts also support `file:` loading without a module server. Alternatively serve this directory with an already-installed static HTTP server. No network requests are made by the application; official links navigate only when selected.
+No installation or runtime dependencies are required. Open `index.html` in a browser. The classic scripts also support `file:` loading without a module server. Alternatively serve this directory with an already-installed static HTTP server. The app makes no fetch, model or analytics requests; loading its files still involves ordinary hosting requests, and official links navigate when selected.
 
 With Node.js 24 (tested):
 
@@ -15,7 +15,7 @@ npm test
 npm run check
 ```
 
-The 18 Node tests cover the three real-case invariants, separately labelled synthetic invalid-record mutations and four targeted font-independent-decoration regressions. Syntax checking covers all three scripts. These are not native visual, keyboard, screen-reader or responsive acceptance tests. The published baseline received bounded desktop visual/keyboard verification; this glyph-fix candidate still needs post-deployment verification. An independent reviewer reported a local Chromium launch blocked before app load; this project does not work around that restriction.
+The 22 Node tests comprise 18 app/regression tests and four viewport-harness tests. They cover the three real-case invariants, separately labelled synthetic invalid-record mutations, font-independent-decoration regressions and the inspection harness. Syntax checking covers all three scripts. These automated checks are separate from browser acceptance. Bounded hosted desktop visual/keyboard checks passed, including a fresh post-deployment check of the corrected glyphs. The actual app was also inspected in 320, 390 and 768 CSS-pixel iframe viewports, with no horizontal overflow in the inspected states. This is not physical-device, OS reduced-motion or screen-reader acceptance.
 
 ## Workflow
 
@@ -53,19 +53,19 @@ The organizer's build window opened **November 13, 2026 at 00:00 UTC**. Public r
 
 An OpenAI assistant generated the implementation, independently written explanations, documentation and tests. Separate assistant reviewers checked source facts and scope, and independently ran tests and reviewed claims/code. This does not replace native accessibility, perceptual media or final human eligibility attestations. The code uses only browser and Node standard APIs; no third-party package is bundled. No AI service is called by the app.
 
-## Remaining acceptance and delivery gates
+## Current delivery and remaining acceptance
 
-- The hosted baseline at https://sharonbasovich.github.io/decisiontrail/ received a bounded desktop check at a 1165-pixel CSS viewport: case selection, evidence disclosure, skip link, visible focus and an official-link/Back journey worked. This is not exhaustive browser or assistive-technology acceptance. Decorative arrow glyphs rendered as missing-glyph squares there; this candidate replaces the brand decoration with inline SVG and removes link arrow glyphs. The changed candidate needs a fresh hosted visual check. Genuine narrow-screen and reduced-motion preference behavior remain unverified.
-- Source facts and locators need final review against the frozen release version; they are a bounded snapshot, not comprehensive data accuracy.
-- Source and free GitHub Pages hosting were delivered for baseline commit c2b3c96f100419f65ad455c8def33fb3b1b79b97. At preparation on November 13, 2026 at 00:36:48 UTC, this fix was unpublished; post-deployment acceptance is recorded separately. No release, video, report PDF or event submission is claimed here.
-- The one-page Municipal Readiness Report requirement remains controlling despite the untouched organizer template rendering as two pages. A completed 2–3-minute demo still requires its applicable perceptual review.
+- Source and the live prototype are published at https://sharonbasovich.github.io/decisiontrail/. The hosted glyph correction passed a fresh visual check. Bounded desktop checks covered case selection, evidence disclosure, skip link, visible focus and an official-link/Back journey. Selected states and keyboard/focus flows were also checked in actual-app iframes at 320, 390 and 768 CSS pixels. These are not exhaustive browser, physical-device, OS reduced-motion or assistive-technology tests; resident comprehension has not been measured.
+- Source facts and locators need final review against the frozen submission version; they are a bounded snapshot, not comprehensive data accuracy.
+- The reviewed one-page Municipal Readiness Report is published below. A locally selected interaction demo has not been uploaded: YouTube delivery is blocked pending sign-in. No live video URL or completed hosted-video acceptance is claimed.
+- DecisionTrail's Devpost draft 1300125 is saved but **not submitted**. Final video delivery, applicable declarations and final submission checks remain open. No release or completed event submission is claimed.
 - No new credentials, account permissions or held Discord sign-in were used.
 
-Do not represent this local checkpoint as a submitted or fully accepted deliverable.
+Do not represent the prototype or saved draft as a submitted or fully accepted deliverable.
 
 ## Municipal Readiness Report
 
-[Read the one-page Municipal Readiness Report](docs/municipal-readiness-report.pdf). This reviewed report describes the archival prototype snapshot and its costs, privacy boundaries and remaining pilot limitations. Publication is not an event submission or a claim of final acceptance; the demo and final entry remain incomplete.
+[Read the one-page Municipal Readiness Report](docs/municipal-readiness-report.pdf). This reviewed report describes the archival prototype snapshot and its costs, privacy boundaries and remaining pilot limitations. Publication is not an event submission or a claim of final acceptance; video delivery and final entry submission remain incomplete.
 
 ## CSS viewport inspection harness
 
