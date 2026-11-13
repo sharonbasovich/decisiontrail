@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DecisionTrail · CSS viewport inspection</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; padding: 24px; font: 16px/1.5 system-ui, sans-serif; color: #19332d; background: #f7f5ef; }
+main { max-width: 1050px; margin: auto; }
+h1 { margin: 0 0 12px; font-size: 26px; }
+p { max-width: 800px; }
+.notice { padding: 16px; border: 2px solid #78531d; background: #f1eadb; }
+.controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 22px 0; }
+select { font: inherit; padding: 8px; }
+a { color: #174e3c; text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid #b94d21; outline-offset: 4px; }
+.frame-scroll { overflow: auto; padding: 8px; border: 1px solid #82948b; background: #e5ebe2; }
+iframe { display: block; width: 320px; height: 1200px; border: 0; background: white; }
+.caption { font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+<h1>DecisionTrail CSS viewport inspection</h1>
+<p class="notice"><strong>Test-only harness.</strong> The frame uses the actual app at a selected CSS-pixel width. This is an iframe CSS viewport check, not physical-device, browser-emulation or operating-system preference acceptance. It does not test a reduced-motion preference or assistive technology.</p>
+<p>Use the app normally inside the frame. Check all three cases, evidence disclosures, focus visibility and both horizontal and vertical overflow. The surrounding harness may scroll horizontally to preserve the chosen frame width. Record the width and exact observations; do not label the result a mobile-device pass.</p>
+<div class="controls">
+<label for="width">Frame width (CSS pixels)</label>
+<select id="width" aria-controls="app-frame">
+<option value="320" selected>320 CSS pixels</option>
+<option value="390">390 CSS pixels</option>
+<option value="768">768 CSS pixels</option>
+</select>
+<a href="../index.html">Open the normal app outside this harness</a>
+</div>
+<p id="width-status" role="status" aria-live="polite" class="caption">Requested frame width: 320 CSS pixels. Frame height: 1200 CSS pixels; scroll within the frame for longer content.</p>
+<div class="frame-scroll">
+<iframe id="app-frame" src="../index.html" title="DecisionTrail app at the selected CSS viewport width" width="320" height="1200"></iframe>
+</div>
+<noscript><p>Width controls require JavaScript. The unchanged app still loads in the default 320-CSS-pixel frame.</p></noscript>
+</main>
+<script>
+'use strict';
+const widthControl = document.getElementById('width');
+const frame = document.getElementById('app-frame');
+const status = document.getElementById('width-status');
+const allowedWidths = new Set(['320', '390', '768']);
+widthControl.addEventListener('change', () => {
+  const width = widthControl.value;
+  if (!allowedWidths.has(width)) return;
+  frame.style.width = width + 'px';
+  frame.setAttribute('width', width);
+  status.textContent = 'Requested frame width: ' + width + ' CSS pixels. Frame height: 1200 CSS pixels; scroll within the frame for longer content.';
+});
+</script>
+</body>
+</html>
