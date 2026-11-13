@@ -57,7 +57,7 @@ An OpenAI assistant generated the implementation, independently written explanat
 
 - Real desktop and narrow-screen rendering, keyboard flows, repeated selection, evidence disclosure and reduced-motion behavior need native verification.
 - Source facts and locators need final review against the frozen release version; they are a bounded snapshot, not comprehensive data accuracy.
-- No public repository, hosting, release, video, report PDF or event submission has been created by this build task.
+- This repository publishes reviewed source only. Hosting, a release, video, report PDF and event submission remain incomplete; browser acceptance remains pending.
 - The one-page Municipal Readiness Report requirement remains controlling despite the untouched organizer template rendering as two pages. A completed 2–3-minute demo still requires its applicable perceptual review.
 - No new credentials, account permissions or held Discord sign-in were used.
 
