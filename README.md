@@ -66,3 +66,7 @@ Do not represent this local checkpoint as a submitted or fully accepted delivera
 ## Municipal Readiness Report
 
 [Read the one-page Municipal Readiness Report](docs/municipal-readiness-report.pdf). This reviewed report describes the archival prototype snapshot and its costs, privacy boundaries and remaining pilot limitations. Publication is not an event submission or a claim of final acceptance; the demo and final entry remain incomplete.
+
+## CSS viewport inspection harness
+
+[Open the test-only viewport harness](tools/viewport-check.html) and select 320, 390 or 768 CSS pixels. Use case selectors and evidence disclosures inside the actual embedded app; inspect wrapping, overflow and keyboard focus. Open external sources through the normal app outside the frame to avoid confusing external frame policies with link failures. This checks iframe CSS viewports only, not physical devices, mobile browser emulation, OS preferences, reduced-motion behavior or assistive technology. The suite now contains 22 tests: 18 app/regression tests and 4 harness tests.
