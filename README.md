@@ -62,3 +62,7 @@ An OpenAI assistant generated the implementation, independently written explanat
 - No new credentials, account permissions or held Discord sign-in were used.
 
 Do not represent this local checkpoint as a submitted or fully accepted deliverable.
+
+## Municipal Readiness Report
+
+[Read the one-page Municipal Readiness Report](docs/municipal-readiness-report.pdf). This reviewed report describes the archival prototype snapshot and its costs, privacy boundaries and remaining pilot limitations. Publication is not an event submission or a claim of final acceptance; the demo and final entry remain incomplete.
