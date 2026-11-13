@@ -1,0 +1,1 @@
+{"name":"decisiontrail","version":"0.1.0","private":true,"scripts":{"test":"node --test test/*.test.js","check":"node --check core.js && node --check cases.js && node --check app.js"}}
