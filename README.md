@@ -15,7 +15,7 @@ npm test
 npm run check
 ```
 
-The 14 Node tests cover the three real-case invariants and separately labelled synthetic invalid-record mutations. Syntax checking covers all three scripts. These are not native visual, keyboard, screen-reader or responsive acceptance tests. Actual browser acceptance remains pending. An independent reviewer reported a local Chromium launch blocked before app load; this project does not work around that restriction.
+The 18 Node tests cover the three real-case invariants, separately labelled synthetic invalid-record mutations and four targeted font-independent-decoration regressions. Syntax checking covers all three scripts. These are not native visual, keyboard, screen-reader or responsive acceptance tests. The published baseline received bounded desktop visual/keyboard verification; this glyph-fix candidate still needs post-deployment verification. An independent reviewer reported a local Chromium launch blocked before app load; this project does not work around that restriction.
 
 ## Workflow
 
@@ -49,15 +49,15 @@ This diagram describes the current code, not a planned automated ingestion pipel
 
 ## Fresh-work and AI disclosure
 
-The organizer's build window opened **November 13, 2026 at 00:00 UTC**. Public rules and the selected challenge were reverified during the 00:07:57–00:10:12 admission review. Concrete case feasibility completed at 00:12:19. Implementation was assigned and created after those checks, within the open window; this README checkpoint was written at 00:22 UTC. Filesystem display timezone is not used as evidence of a different build date. No prior project code was reused.
+The organizer's build window opened **November 13, 2026 at 00:00 UTC**. Public rules and the selected challenge were reverified during the 00:07:57–00:10:12 admission review. Concrete case feasibility completed at 00:12:19. Implementation was assigned and created after those checks, within the open window; the original README checkpoint was written at 00:22 UTC, and this documentation revision was prepared with the subsequent glyph fix. Filesystem display timezone is not used as evidence of a different build date. No prior project code was reused.
 
 An OpenAI assistant generated the implementation, independently written explanations, documentation and tests. Separate assistant reviewers checked source facts and scope, and independently ran tests and reviewed claims/code. This does not replace native accessibility, perceptual media or final human eligibility attestations. The code uses only browser and Node standard APIs; no third-party package is bundled. No AI service is called by the app.
 
 ## Remaining acceptance and delivery gates
 
-- Real desktop and narrow-screen rendering, keyboard flows, repeated selection, evidence disclosure and reduced-motion behavior need native verification.
+- The hosted baseline at https://sharonbasovich.github.io/decisiontrail/ received a bounded desktop check at a 1165-pixel CSS viewport: case selection, evidence disclosure, skip link, visible focus and an official-link/Back journey worked. This is not exhaustive browser or assistive-technology acceptance. Decorative arrow glyphs rendered as missing-glyph squares there; this candidate replaces the brand decoration with inline SVG and removes link arrow glyphs. The changed candidate needs a fresh hosted visual check. Genuine narrow-screen and reduced-motion preference behavior remain unverified.
 - Source facts and locators need final review against the frozen release version; they are a bounded snapshot, not comprehensive data accuracy.
-- This repository publishes reviewed source only. Hosting, a release, video, report PDF and event submission remain incomplete; browser acceptance remains pending.
+- Source and free GitHub Pages hosting were delivered for baseline commit c2b3c96f100419f65ad455c8def33fb3b1b79b97. At preparation on November 13, 2026 at 00:36:48 UTC, this fix was unpublished; post-deployment acceptance is recorded separately. No release, video, report PDF or event submission is claimed here.
 - The one-page Municipal Readiness Report requirement remains controlling despite the untouched organizer template rendering as two pages. A completed 2–3-minute demo still requires its applicable perceptual review.
 - No new credentials, account permissions or held Discord sign-in were used.
 
