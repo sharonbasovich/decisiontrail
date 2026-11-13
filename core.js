@@ -1,6 +1,17 @@
 (function(root){
 'use strict';
 function selectCase(cases,id){return cases.find(c=>c.id===id)||cases[0]||null;}
+// URL state is limited to reviewed IDs; the fragment remains available to skip links.
+function caseFromUrl(cases,href){
+ try{return selectCase(cases,new URL(href).searchParams.get('case'));}
+ catch{return selectCase(cases,null);}
+}
+function caseUrl(cases,id,href){
+ const record=selectCase(cases,id);
+ if(!record)return null;
+ try{const url=new URL(href);url.searchParams.set('case',record.id);return url.href;}
+ catch{return null;}
+}
 function participationView(record){
  // These reviewed archival cases never infer a live opportunity from meeting dates.
  if(record.participation?.status !== 'unknown' || record.participation?.deadline != null) throw new Error('Unsupported participation evidence; requires new review.');
@@ -20,6 +31,6 @@ function validateCases(cases){
  }
  return true;
 }
-const api={selectCase,participationView,validateCases};
+const api={selectCase,caseFromUrl,caseUrl,participationView,validateCases};
 if(typeof module==='object'&&module.exports)module.exports=api;else root.DecisionTrailCore=api;
 })(typeof globalThis==='object'?globalThis:this);

@@ -15,11 +15,13 @@ npm test
 npm run check
 ```
 
-The 22 Node tests comprise 18 app/regression tests and four viewport-harness tests. They cover the three real-case invariants, separately labelled synthetic invalid-record mutations, font-independent-decoration regressions and the inspection harness. Syntax checking covers all three scripts. These automated checks are separate from browser acceptance. Bounded hosted desktop visual/keyboard checks passed, including a fresh post-deployment check of the corrected glyphs. The actual app was also inspected in 320, 390 and 768 CSS-pixel iframe viewports, with no horizontal overflow in the inspected states. This is not physical-device, OS reduced-motion or screen-reader acceptance.
+The 32 Node tests comprise 18 original app/regression tests, ten case-URL/navigation tests and four viewport-harness tests. They cover the three real-case invariants, separately labelled synthetic invalid-record mutations, font-independent-decoration regressions and the inspection harness. Syntax checking covers all three scripts. These automated checks are separate from browser acceptance. Bounded hosted desktop visual/keyboard checks passed, including a fresh post-deployment check of the corrected glyphs. The actual app was also inspected in 320, 390 and 768 CSS-pixel iframe viewports, with no horizontal overflow in the inspected states. This is not physical-device, OS reduced-motion or screen-reader acceptance.
 
 ## Workflow
 
 Choose one of three archived examples. Read the paired **What this establishes** and **What this does not establish** panels. Follow the recorded body, action and date, then expand evidence controls for the official item link and section locator. The link opens the item page, not a highlighted passage. Participation information is separate and explicitly unknown for future proceedings.
+
+Selecting a different example stores its reviewed item ID in the URL's `case` query parameter. A normal **Link to this archived example** link below the heading can be copied or opened without clipboard permissions; it omits unrelated query parameters and targets the decision panel. Reload and Back/Forward restore the addressed case. Unknown or malformed case values fall back to the first example; `#case-detail` remains the native skip-link target. If a browser rejects history updates, selection still works locally and the explicit link remains available. The new navigation is covered by URL and DOM-double tests, not a claim of native browser, offline or assistive-technology acceptance.
 
 The procedural 13–9 vote in MM43.16 did not meet the two-thirds threshold to waive referral. It is not presented as a policy vote. TE34.98's second-quarter 2027 report-back target is not a participation deadline or proof of completed works. IE31.8 does not assume that Council is the next stage after a committee refers something to staff.
 
@@ -60,7 +62,7 @@ An OpenAI assistant generated the implementation, independently written explanat
 - Source and the live prototype are published at https://sharonbasovich.github.io/decisiontrail/. The hosted glyph correction passed a fresh visual check. Bounded desktop checks covered case selection, evidence disclosure, skip link, visible focus and an official-link/Back journey. Selected states and keyboard/focus flows were also checked in actual-app iframes at 320, 390 and 768 CSS pixels. These are not exhaustive browser, physical-device, OS reduced-motion or assistive-technology tests; resident comprehension has not been measured.
 - Source facts and locators need final review against the frozen submission version; they are a bounded snapshot, not comprehensive data accuracy.
 - The reviewed one-page Municipal Readiness Report is published below. A locally selected interaction demo has not been uploaded: YouTube delivery is blocked pending sign-in. No live video URL or completed hosted-video acceptance is claimed.
-- DecisionTrail's Devpost draft 1300125 is saved but **not submitted**. Final video delivery, applicable declarations and final submission checks remain open. No release or completed event submission is claimed.
+- DecisionTrail's Devpost draft 1300125 is saved but **not submitted**. Final video delivery, applicable declarations and final submission checks remain open. A source-only v0.1.0 prerelease preserves the earlier `feb91a10` snapshot; it does not include this case-link revision. No completed event submission is claimed.
 - No new credentials, account permissions or held Discord sign-in were used.
 
 Do not represent the prototype or saved draft as a submitted or fully accepted deliverable.
@@ -71,4 +73,4 @@ Do not represent the prototype or saved draft as a submitted or fully accepted d
 
 ## CSS viewport inspection harness
 
-[Open the test-only viewport harness](tools/viewport-check.html) and select 320, 390 or 768 CSS pixels. Use case selectors and evidence disclosures inside the actual embedded app; inspect wrapping, overflow and keyboard focus. Open external sources through the normal app outside the frame to avoid confusing external frame policies with link failures. This checks iframe CSS viewports only, not physical devices, mobile browser emulation, OS preferences, reduced-motion behavior or assistive technology. The suite now contains 22 tests: 18 app/regression tests and 4 harness tests.
+[Open the test-only viewport harness](tools/viewport-check.html) and select 320, 390 or 768 CSS pixels. Use case selectors and evidence disclosures inside the actual embedded app; inspect wrapping, overflow and keyboard focus. Open external sources through the normal app outside the frame to avoid confusing external frame policies with link failures. This checks iframe CSS viewports only, not physical devices, mobile browser emulation, OS preferences, reduced-motion behavior or assistive technology. The suite now contains 32 tests: 18 original app/regression tests, ten navigation tests and four harness tests.
